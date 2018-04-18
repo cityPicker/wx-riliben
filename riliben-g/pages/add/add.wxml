@@ -1,0 +1,27 @@
+<view>
+  <form>
+    <view class='page-section'>
+      <view class='textarea-wrp'>
+        <textarea placeholder='这一刻有什么...' placeholder-class='placehoder-style' focus='true'></textarea>
+        <view>
+          <view class='imag-add'>
+            <image mode='scaleToFill' src='../../images/icon_add.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='page-section'>
+      <view class='textarea-wrp flex-section'>
+        <text>我的位置</text>
+        <view class='icon-right'><image mode='widthFix' src='../../images/icon_right.png'></image></view>
+      </view>
+    </view>
+    <view class='page-section'>
+      <view class='textarea-wrp flex-section'>
+        <text>添加标签</text>
+        <view class='icon-right'><image mode='widthFix' src='../../images/icon_right.png'></image></view>
+      </view>
+    </view>
+    <button type='primary' form-type='submit'>发布</button>
+  </form>
+</view>

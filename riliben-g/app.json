@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/add/add",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/addTag/addTag",
+    "pages/my/my"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#090723",
+    "navigationBarTitleText": "riliben",
+    "backgroundColorBottom": "#090723"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "",
+        "iconPath": "images/icon_list_white.png",
+        "selectedIconPath": "images/icon_list_red.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "",
+        "iconPath": "images/icon_add_white.png.png",
+        "selectedIconPath": "images/icon_add_white.png.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "",
+        "iconPath": "images/icon_my_white.png",
+        "selectedIconPath": "images/icon_my_red.png"
+      }
+    ],
+    "backgroundColor": "#090723"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
