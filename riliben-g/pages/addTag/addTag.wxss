@@ -1,1 +1,51 @@
-/* pages/addTag/addTag.wxss */
+.tag-title{
+  background: #fff;
+  padding: 22rpx 24rpx 18rpx;
+}
+.add-tag-input{
+  height: 60rpx;
+  line-height: 60rpx;
+  display: inline-block;
+}
+.btn_sm{
+  border-radius: 30rpx;
+  border: 0;
+  margin-right: 10rpx;
+}
+.tags{
+  padding: 0 24rpx;
+  border-top: 1px solid #eee;
+}
+.all-tags{
+  color: #888;
+  height: 82rpx;
+  line-height: 82rpx;
+}
+.tag{
+  display: inline-block;
+  height: 56rpx;
+  line-height: 56rpx;
+  padding: 0 26rpx;
+  border-radius: 30rpx;
+  border: 1px solid #ddd;
+  margin-right: 18rpx;
+  margin-bottom: 20rpx;
+  font-size: 14px;
+}
+.selectedTag{
+  border-color:#60bc3e;
+  color: #60bc3e;
+  background: #fff;
+}
+.bottom_btn{
+  padding: 24rpx 24rpx 0;
+}
+.btn{
+  margin-top: 30rpx;
+}
+
+
+
+
+
+

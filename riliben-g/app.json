@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/addTag/addTag",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/position/position"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -23,8 +24,8 @@
       {
         "pagePath": "pages/add/add",
         "text": "",
-        "iconPath": "images/icon_add_white.png.png",
-        "selectedIconPath": "images/icon_add_white.png.png"
+        "iconPath": "images/icon_add_white.png",
+        "selectedIconPath": "images/icon_add_red.png"
       },
       {
         "pagePath": "pages/my/my",

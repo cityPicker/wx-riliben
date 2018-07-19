@@ -1,0 +1,20 @@
+<view class='tag-title'>
+  <view class="tag {{item.isSelected ?'selectedTag':''}}" wx:for="{{tagList}}" wx:key="" wx:if="{{item.isSelected}}">
+    {{item.name}}
+  </view>
+  <view class='add-input-box'>
+    <input class='add-tag-input' placeholder='输入标签' value='{{tagvalue}}' bindinput='inputValue' />
+    <button hidden='{{ishidden ? true : false}}' class="btn_sm" size='mini' type='primary' bindtap='addSubmit'>确定</button>
+    <!-- <button class="btn" size='mini'>取消</button> -->
+  </view>
+</view>
+<view class='tags'>
+  <view class='all-tags'>所有标签</view>
+  <view class="tag {{item.isSelected ?'selectedTag':''}}" wx:for="{{tagList}}" bindtap='selectTag' wx:key='' data-tab="{{item.isSelected}}" data-index='{{index}}'>
+    {{item.name}}
+  </view>
+</view>
+<view class='bottom_btn'>
+  <button class='btn' type='primary' bindtap='addTag'>保存</button>
+  <button class='btn' bindtap='goBack'>取消</button>
+</view>

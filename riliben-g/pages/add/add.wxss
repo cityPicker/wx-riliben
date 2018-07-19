@@ -17,14 +17,38 @@ textarea {
 .page-section:last-child{
   margin-bottom: 0;
 }
+.imgs_box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.upload_img{
+  position: relative;
+}
+.upload_img image{
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+}
+.close_icon{
+  width: 30rpx;
+  height: 30rpx;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  line-height:30rpx;
+  text-align:center;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 20rpx;
+}
 .imag-add{
   background-color: #fff;
 }
 .imag-add image{
-  width: 70rpx;
-  height: 70rpx;
+  width: 100rpx;
+  height: 100rpx;
   border: 1px dotted #ccc;
-  padding: 10rpx;
+  padding: 20rpx;
 }
 .flex-section{
   height:80rpx;
@@ -32,11 +56,19 @@ textarea {
   font-size: 28rpx;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .icon-right image{
   width: 30rpx;
   margin-top: 25rpx;
+}
+.flex_box{
+  display: flex;
+  justify-content: flex-end; 
+  width:520rpx;
+  color: #60bc3e;
+}
+.my_tag{
+  margin-left: 35rpx;
 }
 button{
   margin: 25rpx;

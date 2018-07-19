@@ -2,26 +2,35 @@
   <form>
     <view class='page-section'>
       <view class='textarea-wrp'>
-        <textarea placeholder='这一刻有什么...' placeholder-class='placehoder-style' focus='true'></textarea>
-        <view>
-          <view class='imag-add'>
-            <image mode='scaleToFill' src='../../images/icon_add.png'></image>
+        <textarea value='{{context}}' bindinput='context' placeholder='这一刻有什么...' placeholder-class='placehoder-style' focus='true'></textarea>
+        <view class='imgs_box'>
+          <view class='upload_img' wx:for='{{uploadImgs}}' wx:key='' data-index='{{index}}' wx:if='{{index<9}}'>
+            <image mode='scaleToFill' src='{{item}}' data-tap='{{item}}' bindtap='viewImg'></image>
+            <view class='close_icon' data-index='{{index}}' bindtap='deleteImg'>×</view>
+          </view>
+          <view class='imag-add' hidden='{{uploadImgs.length>8?true:false}}'>
+            <image mode='scaleToFill' src='../../images/icon_add.png' bindtap='uploadImgs'></image>
           </view>
         </view>
       </view>
     </view>
     <view class='page-section'>
-      <view class='textarea-wrp flex-section'>
+      <view class='textarea-wrp flex-section' bindtap='mylocation'>
         <text>我的位置</text>
+        <text class='flex_box'>{{mylocation}}</text>
         <view class='icon-right'><image mode='widthFix' src='../../images/icon_right.png'></image></view>
       </view>
     </view>
     <view class='page-section'>
-      <view class='textarea-wrp flex-section'>
+      <view class='textarea-wrp flex-section' bindtap='addTags'>
         <text>添加标签</text>
+        <view class='flex_box'>
+          <text class='my_tag' wx:for="{{myTags}}" wx:key='' wx:if='{{item.isSelected}}'>{{item.name}}</text>
+        </view>
         <view class='icon-right'><image mode='widthFix' src='../../images/icon_right.png'></image></view>
       </view>
     </view>
-    <button type='primary' form-type='submit'>发布</button>
+    <button type='primary' bindtap='formSubmit'>发布</button>
   </form>
+  <view>{{items.dateId}}</view>
 </view>
