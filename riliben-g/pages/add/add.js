@@ -23,6 +23,7 @@ Page({
     this.setData({
       myTags: wx.getStorageSync('tags') || []
     })
+    //console.log("uploadImgs: "+this.data.uploadImgs)
   },
 
   //textarea输入
@@ -42,11 +43,12 @@ Page({
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
-
+        
         self.data.uploadImgs = self.data.uploadImgs.concat(tempFilePaths)
         self.setData({
           uploadImgs: self.data.uploadImgs,
         })
+        //console.log("self.data.uploadImgs"+self.data.uploadImgs)
       }
     })
   },
@@ -103,6 +105,8 @@ Page({
     mylocation = this.data.mylocation,
     myTags = this.data.myTags,
     uploadImgs = this.data.uploadImgs
+    //console.log("uploadImgs: "+uploadImgs)
+    //return false
 
     if (!context && uploadImgs.length==0){
       wx.showModal({
@@ -118,15 +122,35 @@ Page({
       myTags: myTags,
       uploadImgs: uploadImgs,
     }
+    
+    
     var dateId = Date.now()
+    var dateView = util.formatTime(new Date(dateId))
     var item = {
       itemCon: itemCon,
-      dateId: dateId
+      dateId: dateId,
+      dateView: dateView
     }
-    app.globalData.items.push(item)
+    app.globalData.items.unshift(item)
     
-    wx.navigateTo({
-      url: '../index/index'
-    })
+
+    //存缓存
+    var items = app.globalData.items || []
+    //console.log(items)
+    items.concat(item)
+    //console.log(items)
+    wx.setStorageSync('items', items)
+    //console.log(items)
+    // wx.switchTab({
+    //   url: '../index/index'
+    // })
+
+
+    //console.log(this.data.uploadImgs)
+    var imgs = this.data.uploadImgs || []
+    console.log(imgs)
+    ( wx.getStorageSync('imgs')||[]).push(imgs)
+    console.log(imgs)
+    wx.setStorageSync('imgs', imgs)
   },
 })

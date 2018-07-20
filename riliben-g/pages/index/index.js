@@ -1,9 +1,12 @@
 //index.js
 //获取应用实例
+const util = require('../../utils/util.js')
 const app = getApp()
 
 Page({
   data: {
+    items: [],
+        
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -15,7 +18,15 @@ Page({
       url: '../logs/logs'
     })
   },
+  onShow: function () {
+    //获取itmes
+    this.setData({
+      items: wx.getStorageSync('items') || []
+    })
+  },
   onLoad: function () {
+    
+    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,12 +54,24 @@ Page({
       })
     }
   },
+
   getUserInfo: function(e) {
-    console.log(e)
+    //console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+
+  //查看大图
+  viewImg: function (e) {
+    var current = e.currentTarget.dataset.tap
+    //var index = e.currentTarget.dataset.index
+    //var urls = this.data.uploadImgs
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接
+      urls: [current] // 需要预览的图片http链接列表
+    })
+  },
 })

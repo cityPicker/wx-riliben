@@ -5,11 +5,11 @@
         <textarea value='{{context}}' bindinput='context' placeholder='这一刻有什么...' placeholder-class='placehoder-style' focus='true'></textarea>
         <view class='imgs_box'>
           <view class='upload_img' wx:for='{{uploadImgs}}' wx:key='' data-index='{{index}}' wx:if='{{index<9}}'>
-            <image mode='scaleToFill' src='{{item}}' data-tap='{{item}}' bindtap='viewImg'></image>
+            <image mode='aspectFill' src='{{item}}' data-tap='{{item}}' bindtap='viewImg'></image>
             <view class='close_icon' data-index='{{index}}' bindtap='deleteImg'>×</view>
           </view>
           <view class='imag-add' hidden='{{uploadImgs.length>8?true:false}}'>
-            <image mode='scaleToFill' src='../../images/icon_add.png' bindtap='uploadImgs'></image>
+            <image mode='aspectFill' src='../../images/icon_add.png' bindtap='uploadImgs'></image>
           </view>
         </view>
       </view>
