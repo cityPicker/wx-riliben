@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/addTag/addTag",
     "pages/my/my",
-    "pages/position/position"
+    "pages/position/position",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -23,7 +23,7 @@ Page({
     this.setData({
       myTags: wx.getStorageSync('tags') || []
     })
-    //console.log("uploadImgs: "+this.data.uploadImgs)
+    
   },
 
   //textarea输入
@@ -105,9 +105,7 @@ Page({
     mylocation = this.data.mylocation,
     myTags = this.data.myTags,
     uploadImgs = this.data.uploadImgs
-    //console.log("uploadImgs: "+uploadImgs)
-    //return false
-
+    
     if (!context && uploadImgs.length==0){
       wx.showModal({
         title: '提示',
@@ -131,26 +129,26 @@ Page({
       dateId: dateId,
       dateView: dateView
     }
-    app.globalData.items.unshift(item)
+    //app.globalData.items.unshift(item)
     
 
     //存缓存
-    var items = app.globalData.items || []
-    //console.log(items)
-    items.concat(item)
-    //console.log(items)
+    var items = wx.getStorageSync('items') || []
+    items.unshift(item)
     wx.setStorageSync('items', items)
-    //console.log(items)
-    // wx.switchTab({
-    //   url: '../index/index'
-    // })
+    
+    wx.switchTab({
+      url: '../index/index'
+    })
+
+    //重置
+    this.setData({
+      context: '',
+      mylocation: '',
+      myTags: [],
+      uploadImgs: [],
+    })
 
 
-    //console.log(this.data.uploadImgs)
-    var imgs = this.data.uploadImgs || []
-    console.log(imgs)
-    ( wx.getStorageSync('imgs')||[]).push(imgs)
-    console.log(imgs)
-    wx.setStorageSync('imgs', imgs)
   },
 })

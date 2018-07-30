@@ -74,3 +74,13 @@
   height: 32rpx;
   margin-right: 5rpx;
 }
+.null-view{
+  padding: 100rpx;
+  text-align: center;
+  background: #fff;
+}
+.go-add{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 50rpx;
+}

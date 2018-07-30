@@ -6,13 +6,13 @@
     <view>{{userInfo.nickName}}</view>
   </view>
 
-  <view class='item' wx:for="{{items}}" wx:for-item="item" wx:key="{{item.dateId}}" data-id="{{item.dateId}}">
+  <view class='item' wx:for="{{items}}" wx:for-item="item" wx:key="{{item.dateId}}" data-id="{{item.dateId}}" data-index="{{index}}" bindtap='toDetail'>
      <view class='date_text'>{{item.dateView}}</view>
      <text>{{item.itemCon.context}}</text>
 
      <view class='img_box'>
       <block wx:for='{{item.itemCon.uploadImgs}}' wx:for-item="img" wx:key=''>
-        <image class='item_image' src='{{img}}' mode='aspectFill' data-tap='{{img}}' bindtap='viewImg'></image>
+        <image class='item_image' src='{{img}}' mode='aspectFill' data-tap='{{img}}' data-url='{{item.itemCon.uploadImgs}}' bindtap='viewImg'></image>
       </block>
      </view>
 
@@ -27,5 +27,9 @@
         {{item.itemCon.mylocation}}
       </view>
      </view>
+  </view>
+  <view class='null-view' wx:if="{{items.length == 0}}">
+    还没有内容，快去添加吧~
+    <view bindtap='goAdd'><image class='go-add' src='../../images/icon_add.png'></image></view>
   </view>
 </view>

@@ -67,11 +67,27 @@ Page({
   //查看大图
   viewImg: function (e) {
     var current = e.currentTarget.dataset.tap
-    //var index = e.currentTarget.dataset.index
-    //var urls = this.data.uploadImgs
+    var url = e.currentTarget.dataset.url
+    
     wx.previewImage({
       current: current, // 当前显示图片的http链接
-      urls: [current] // 需要预览的图片http链接列表
+      urls: url // 需要预览的图片http链接列表
     })
+  },
+
+  //为空时点击跳转添加
+  goAdd: function(){
+    wx.switchTab({
+      url: '../add/add'
+    })
+  },
+
+  //去详情页
+  toDetail: function(e){
+    var index = e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: '../detail/detail?index='+index
+    })
+
   },
 })
