@@ -23,7 +23,7 @@ Page({
     this.setData({
       myTags: wx.getStorageSync('tags') || []
     })
-    
+        
   },
 
   //textarea输入
@@ -104,8 +104,18 @@ Page({
     var context = this.data.context,
     mylocation = this.data.mylocation,
     myTags = this.data.myTags,
-    uploadImgs = this.data.uploadImgs
-    
+    uploadImgs = this.data.uploadImgs,
+    tagIsSelected = false;
+
+    //是否选中某个标签
+    tagIsSelected = myTags.map(function(item){
+      if(item.isSelected){
+        return "1"
+      }else{
+        return ''
+      }
+    }).indexOf("1")
+        
     if (!context && uploadImgs.length==0){
       wx.showModal({
         title: '提示',
@@ -119,8 +129,9 @@ Page({
       mylocation: mylocation,
       myTags: myTags,
       uploadImgs: uploadImgs,
+      tagIsSelected: tagIsSelected
     }
-    
+       
     
     var dateId = Date.now()
     var dateView = util.formatTime(new Date(dateId))
@@ -129,8 +140,7 @@ Page({
       dateId: dateId,
       dateView: dateView
     }
-    //app.globalData.items.unshift(item)
-    
+        
 
     //存缓存
     var items = wx.getStorageSync('items') || []
@@ -145,10 +155,12 @@ Page({
     this.setData({
       context: '',
       mylocation: '',
-      myTags: [],
-      uploadImgs: [],
+      uploadImgs: [],      
     })
-
+    myTags.forEach(function(item){
+      item.isSelected = false
+    })
+    wx.setStorageSync('tags', myTags)
 
   },
 })

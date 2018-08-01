@@ -1,2 +1,26 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxmlid={{id}}</text>
+<view class='item'>
+     <view class='date_text'>
+      <view>{{content.dateView}}</view>
+      <view bindtap='delete'><image class='detele-icon' src='../../images/operation_delate.png'></image></view>
+     </view>
+     <text>{{content.itemCon.context}}</text>
+
+     <view class='img_box'>
+      <block wx:for='{{content.itemCon.uploadImgs}}' wx:for-item="img" wx:key=''>
+        <image class='item_image' src='{{img}}' mode='aspectFill' data-tap='{{img}}' data-url='{{content.itemCon.uploadImgs}}' bindtap='viewImg'></image>
+      </block>
+     </view>
+
+     <view class='item_bottom' wx:if='{{content.itemCon.tagIsSelected == "1" || content.itemCon.mylocation.length>0}}'>
+      <view class='tags_box'>
+        <block wx:for='{{content.itemCon.myTags}}' wx:for-item="tag" wx:if="{{tag.isSelected}}" wx:key=''>
+          <view class='tag'><text class='jing'>#</text>{{tag.name}}</view>
+        </block>
+      </view>
+      <view class='item_location' wx:if='{{content.itemCon.mylocation.length}}'>
+        <view><image class='location_img' src='../../images/location-icon.png'></image></view>
+        {{content.itemCon.mylocation}}
+      </view>
+     </view>
+</view>

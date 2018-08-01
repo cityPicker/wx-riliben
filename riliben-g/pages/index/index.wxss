@@ -84,3 +84,16 @@
   height: 100rpx;
   margin-top: 50rpx;
 }
+.total{
+  float: right;
+  color: #888;
+  font-size: 26rpx;
+  position:absolute;
+  right:24rpx;
+  line-height: 100%;
+}
+.total text{
+  font-style: italic;
+  
+
+}
