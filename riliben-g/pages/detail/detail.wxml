@@ -24,3 +24,7 @@
       </view>
      </view>
 </view>
+<view class='canvas-btn'>
+  <button size='mini' type='primary' bindtap='canvasFun'>保存为图片</button>
+</view>
+<canvas canvas-id="shareCanvas" style="width:300px;height:300px"></canvas>

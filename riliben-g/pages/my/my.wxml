@@ -1,0 +1,17 @@
+<import src="../../template/calendar/index.wxml"/>
+<view class='page_title'>
+    <view><image src='{{userInfo.avatarUrl}}'></image></view> 
+    <view class='round1'></view>
+    <view class='round2'></view>
+    <view class='round3'></view>
+    <view class='round4'></view>
+    <view class='round5'></view>
+    <view class='round1'></view>
+    <!-- <view>{{userInfo.nickName}}</view> -->
+    <!-- <view class='total'>共<text>{{items.length}}</text> 条</view> -->
+</view>
+<view class="calendar-wrap">
+   <template is="calendar" data="{{...calendar}}" />
+  <button class="switchView" type="primary" bindtap="switchView">周/月视图</button>
+</view>
+

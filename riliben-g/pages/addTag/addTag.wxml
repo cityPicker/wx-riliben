@@ -9,7 +9,7 @@
   </view>
 </view>
 <view class='tags'>
-  <view class='all-tags'>所有标签</view>
+  <view class='all-tags' wx:if="{{tagList.length>0}}">所有标签</view>
   <view class="tag {{item.isSelected ?'selectedTag':''}}" wx:for="{{tagList}}" bindtap='selectTag' wx:key='' data-tab="{{item.isSelected}}" data-index='{{index}}'>
     {{item.name}}
   </view>

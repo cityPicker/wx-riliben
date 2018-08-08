@@ -6,6 +6,7 @@ const app = getApp()
 Page({
   data: {
     items: [],
+    today: new Date().toLocaleDateString(),
         
     motto: 'Hello World',
     userInfo: {},
@@ -90,4 +91,13 @@ Page({
     })
 
   },
+
+  // 触底事件
+  onReachBottom: function(){
+    setTimeout(() => {
+      this.setData({
+        isHideLoadMore:true
+      })
+    }, 1000)
+  }
 })

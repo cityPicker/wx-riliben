@@ -93,4 +93,22 @@ Page({
     })
   },
 
+  // 画布
+  canvasFun: function(){
+    const wxGetImageInfo = wx.getImageInfo
+    const ctx = wx.createCanvasContext('shareCanvas')
+    // 底图
+    //ctx.drawImage(res.path, 0, 0, 600, 900)
+    // 作者名称
+    //填充背景色
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, 300, 300)
+    ctx.setTextAlign('center')    // 文字居中
+    ctx.setFillStyle('#000000')  // 文字颜色：黑色
+    ctx.setFontSize(22)         // 文字字号：22px
+    ctx.fillText("作者：一斤代码", 300 / 2, 150)
+    ctx.stroke()
+    ctx.draw()
+  }
+
 })

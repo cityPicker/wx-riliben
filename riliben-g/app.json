@@ -41,5 +41,11 @@
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": true,
+  "plugins": {
+    "myPlugin": {
+      "version": "1.0.3",
+      "provider": "wx60d306fd175fe556"
+    }
+  }
 }

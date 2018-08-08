@@ -1,0 +1,130 @@
+@import '../../template/calendar/index.wxss';
+.page_title{
+  box-sizing: border-box;
+  position: relative;
+  height: 125rpx;
+  width: 100%;
+  background: #090723;
+  overflow: hidden;
+}
+.page_title image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius:50%;
+  margin-right: 30rpx;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 99;
+  margin-left: -40rpx;
+  animation:image 2s linear infinite alternate;
+  -webkit-animation:image 2s linear infinite alternate; /*Safari and Chrome*/
+}
+.round1, .round2, .round3, .round4, .round5{
+  width: 2000rpx;
+  height: 2000rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 65rpx;
+}
+.round1{
+  left: -90%;
+  animation:mymove 3s ease infinite alternate;
+  -webkit-animation:mymove 3s ease infinite alternate; /*Safari and Chrome*/
+}
+.round2{
+  left: -100%;
+  animation:mymove2 3s ease 1s infinite alternate;
+  -webkit-animation:mymove2 3s ease 1s infinite alternate; /*Safari and Chrome*/
+}
+.round3{
+  left: -100%;
+  animation:mymove3 3s ease infinite alternate;
+  -webkit-animation:mymove3 3s ease infinite alternate; /*Safari and Chrome*/
+}
+.round4{
+  left: -50%;
+  animation:mymove4 2s ease infinite alternate;
+  -webkit-animation:mymove4 2s ease infinite alternate; /*Safari and Chrome*/
+}
+.round5{
+  left: -70%;
+  animation:mymove5 2s ease 1s infinite alternate;
+  -webkit-animation:mymove5 2s ease 1s infinite alternate; /*Safari and Chrome*/
+}
+@keyframes image
+{
+from {transform: rotate(-30deg)}
+to {transform: rotate(30deg)}
+}
+@-webkit-keyframes image /*Safari and Chrome*/
+{
+from {left:40%;}
+to {left:60%;}
+}
+/* mymove */
+@keyframes mymove
+{
+from {left:-90%;}
+to {left:-70%;}
+}
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from {left:-90%;}
+to {left:-70%;}
+}
+/* mymove2 */
+@keyframes mymove2
+{
+from {left:-100%;}
+to {left:-130%;}
+}
+@-webkit-keyframes mymove2 /*Safari and Chrome*/
+{
+from {left:-100%;}
+to {left:-130%;}
+}
+/* mymove3 */
+@keyframes mymove3
+{
+from {left:-100%;}
+to {left:-120%;}
+}
+@-webkit-keyframes mymove3 /*Safari and Chrome*/
+{
+from {left:-100%;}
+to {left:-120%;}
+}
+/* mymove4 */
+@keyframes mymove4
+{
+from {left:-50%;}
+to {left:-20%;}
+}
+@-webkit-keyframes mymove4 /*Safari and Chrome*/
+{
+from {left:-50%;}
+to {left:-20%;}
+}
+/* mymove5 */
+@keyframes mymove5
+{
+from {left:-70%;}
+to {left:-40%;}
+}
+@-webkit-keyframes mymove5 /*Safari and Chrome*/
+{
+from {left:-70%;}
+to {left:-40%;}
+}
+
+/* 日历 */
+.calendar-wrap {
+  padding: 0 10rpx 50rpx;
+  background: #fff;
+}
+.switchView {
+  width: 300rpx;
+  margin-top: 50rpx;
+}
